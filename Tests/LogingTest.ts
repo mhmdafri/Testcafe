@@ -11,3 +11,14 @@ test('login scenario', async t => {
 
 
 });
+
+const { userVariables } = require('testcafe');
+
+fixture `Test user variables`
+    .page(userVariables.url);
+
+test('Type text', async t => {
+    await t
+        .typeText('#user-name', 'Mohamed Afri')
+        .click('#login-button');
+});
